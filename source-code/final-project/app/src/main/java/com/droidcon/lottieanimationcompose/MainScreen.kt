@@ -53,7 +53,7 @@ fun MainScreen() {
         }
         val likeProgress by animateFloatAsState(
             targetValue = if (isLiked) 0.6f else 0f,
-            tween(durationMillis = 1500, easing = LinearOutSlowInEasing)
+            animationSpec = tween(durationMillis = 1500, easing = LinearOutSlowInEasing)
         )
         LottieAnimation(
             composition = likeComposition,
