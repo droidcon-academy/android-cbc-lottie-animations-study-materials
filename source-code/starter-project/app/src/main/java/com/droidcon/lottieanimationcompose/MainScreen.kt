@@ -37,48 +37,6 @@ fun MainScreen() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-
-        val loaderComposition by rememberLottieComposition(spec = LottieCompositionSpec.RawRes(R.raw.loading))
-        val loaderProgress by animateLottieCompositionAsState(
-            composition = loaderComposition,
-            iterations = LottieConstants.IterateForever
-        )
-        LottieAnimation(composition = loaderComposition, progress = { loaderProgress })
-
-
-        val likeComposition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.like))
-        var isLiked by remember{ mutableStateOf(false) }
-        val likeProgress by animateFloatAsState(
-            targetValue = if(isLiked) .6f else 0f,
-            animationSpec = tween(durationMillis = 1500, easing = LinearOutSlowInEasing),
-            label = "likeProgress"
-        )
-
-        LottieAnimation(
-            composition = likeComposition,
-            modifier = Modifier
-                .size(200.dp)
-                .clickable(
-                    interactionSource = MutableInteractionSource(),
-                    indication = null,
-                    onClick = { isLiked = !isLiked }
-                ),
-            progress = { likeProgress }
-        )
-
-
-        val thermometerComposition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.thermometer))
-        var thermometerProgress by remember {
-            mutableStateOf(0f)
-        }
-
-        LottieAnimation(
-            modifier = Modifier.size(400.dp),
-            composition = thermometerComposition,
-            progress = { thermometerProgress },
-        )
-
-        Slider(value = thermometerProgress, onValueChange = { thermometerProgress = it })
-
+        // We will put code here
     }
 }
